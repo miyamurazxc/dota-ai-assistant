@@ -121,26 +121,34 @@
 
 ---
 
-Архитектура (потоки данных)
+## Архитектура системы (потоки данных)
+
+```mermaid
 flowchart TD
-  U[Пользователь] -->|Ввод героев / текст / скрин| UI[UI: Console/Streamlit]
+    U[Пользователь] -->|Герои или скриншот| UI[Streamlit UI]
 
-  UI -->|Список героев| RE[Rule Engine: if-then]
-  UI -->|Текст| NLP[NLP модуль]
-  UI -->|Скрин| PRE[OpenCV предобработка]
-  PRE --> CV[CV модуль (классификация иконок)]
-  CV -->|Распознанные герои| RE
-  NLP -->|Сущности героев| RE
+    %% Text / Rule branch
+    UI -->|Текстовый ввод| ANALYZE[Анализ героев и угроз]
+    ANALYZE --> KB[(База знаний<br/>Heroes / Tags / Counters)]
 
-  RE --> KB[(База знаний JSON/CSV)]
-  KB --> RE
+    %% Image / CV branch
+    UI -->|Скриншот| PRE[OpenCV предобработка]
+    PRE --> CV[CV модуль<br/>(распознавание иконок)]
+    CV --> PARSE[Парсер результатов]
+    PARSE --> ANALYZE
 
-  RE --> OUT[Рекомендации + объяснение]
-  OUT --> UI
+    %% Rule Engine
+    ANALYZE --> RE[Rule-Based Engine<br/>(if–then правила)]
+    RE --> OUT[Рекомендации<br/>Контр-пики / Предметы / План игры]
+
+    %% Output
+    OUT --> UI
+```
 
 
 ## 8. Перспективы развития
 - Добавление NLP-модуля для обработки текстовых запросов пользователя.
 - Добавление Computer Vision мод
+
 
 
