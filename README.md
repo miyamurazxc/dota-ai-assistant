@@ -122,18 +122,18 @@
 ---
 
 flowchart TD
-    U[Пользователь] -->|Герои или скриншот| UI[Streamlit UI]
+    U[Пользователь] -->|Герои или скрин| UI[Streamlit UI]
 
-    UI -->|Текстовый ввод| ANALYZE[Анализ героев и угроз]
-    ANALYZE --> KB[(База знаний: Heroes, Tags, Counters)]
-
+    UI -->|Текст| ANALYZE[Анализ героев и угроз]
     UI -->|Скриншот| PRE[OpenCV предобработка]
-    PRE --> CV[CV модуль: распознавание иконок]
-    CV --> PARSE[Парсер результатов]
+    PRE --> CV[CV модуль]
+    CV --> PARSE[Парсер героев]
+
+    ANALYZE --> KB[База знаний]
     PARSE --> ANALYZE
 
-    ANALYZE --> RE[Rule-Based Engine: if-then правила]
-    RE --> OUT[Рекомендации: контр-пики, предметы, план игры]
+    ANALYZE --> RE[Rule-Based Engine]
+    RE --> OUT[Рекомендации]
 
     OUT --> UI
 
@@ -141,6 +141,7 @@ flowchart TD
 ## 8. Перспективы развития
 - Добавление NLP-модуля для обработки текстовых запросов пользователя.
 - Добавление Computer Vision мод
+
 
 
 
