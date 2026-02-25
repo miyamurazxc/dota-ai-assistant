@@ -1,0 +1,10 @@
+{
+    "threat_to_items": {
+      "invis": ["Dust", "Sentry Ward", "Gem"],
+      "heavy_magic": ["Pipe of Insight", "Glimmer Cape", "Hood of Defiance"],
+      "many_stuns": ["Black King Bar", "Linken's Sphere"],
+      "regen_heal": ["Spirit Vessel", "Skadi"],
+      "physical_burst": ["Ghost Scepter", "Aeon Disk", "Crimson Guard"],
+      "silence": ["Manta Style", "Eul's Scepter", "Lotus Orb"]
+    }
+  }
