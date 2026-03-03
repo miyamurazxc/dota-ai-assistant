@@ -39,7 +39,6 @@
 
 ### Архитектурная схема
 
-flowchart TD
     U[Пользователь] --> UI[CLI / Demo scripts]
     UI --> NLP[NLP модуль]
     UI --> CV[CV модуль OCR]
@@ -316,6 +315,7 @@ data/Phantom_Lancer/phantom lancer.png
 
 Реализован MVP и расширения до Week 7 (NLP + OCR).  
 Проект готов к дальнейшему расширению и улучшению.
+
 
 
 
