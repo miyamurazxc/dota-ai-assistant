@@ -39,21 +39,17 @@
 
 ### Архитектурная схема
 
-```mermaid
 flowchart TD
     U[Пользователь] --> UI[CLI / Demo scripts]
     UI --> NLP[NLP модуль]
-    UI --> CV[CV модуль (OCR)]
-    NLP --> ANALYZE[Анализ состава/угроз]
+    UI --> CV[CV модуль OCR]
+    NLP --> ANALYZE[Анализ состава и угроз]
     CV --> ANALYZE
     ANALYZE --> KB[База знаний]
     KB --> RULES[Rule-Based Engine]
-    RULES --> REC[Recommender + объяснения]
+    RULES --> REC[Recommender и объяснения]
     REC --> OUT[Рекомендации]
     OUT --> UI
-```
-
----
 
 ## 5. Структура проекта (актуальная)
 
@@ -320,6 +316,7 @@ data/Phantom_Lancer/phantom lancer.png
 
 Реализован MVP и расширения до Week 7 (NLP + OCR).  
 Проект готов к дальнейшему расширению и улучшению.
+
 
 
 
